@@ -49,10 +49,11 @@
     align-self : center;
     min-height: auto;
     min-width: auto;
+    max-height: 100px;
   }
   .left div.cart {
     order : 2;
-    -webkit-flex : 1 0 auto;
+    -webkit-flex : 2 0 auto;
     align-self : center;
     min-height: auto;
     min-width: auto;
@@ -61,8 +62,12 @@
     padding-top: 18px;
   }
   .items {
-    height: 130%;
+    height: 120%;
     overflow: scroll;
+  }
+  .round {
+    padding-top: 15px;
+    display: inline-block;
   }
 
   </style>
@@ -100,8 +105,8 @@
 
 
        <div class="items">
-        <ul class="collapsible popout" data-collapsible="accordion">
-          <li class="dismissable" ng-repeat="item in items">
+        <ul class="collapsible" data-collapsible="accordion" ng-repeat="item in items track by $index">
+          <li class="dismissable">
             <div class="collapsible-header">{{item}}<div class="right">Rs 38</div></div>
             <div class="collapsible-body green lighten-4">
               <a class="waves-effect waves-light btn red darken-3"><i class="mdi-action-highlight-remove left"></i>Remove</a>
@@ -110,6 +115,12 @@
           </li>
         </ul> <!-- collapsible -->
        </div><!-- items div scroll-->
+
+       <div class="right round">
+          <h5 class="left">Total : Rs 873</h5>
+          <a class="btn-floating btn-large waves-effect waves-light red"><i class="mdi-content-clear"></i></a>
+          <a class="btn-floating btn-large waves-effect waves-light green"><i class="mdi-action-done"></i></a>
+       </div><!-- right floating buttons -->
 
 
        </div><!-- small card cart -->
