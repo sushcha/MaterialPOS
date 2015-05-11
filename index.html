@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- Add shadow to elements
+      change div colors-->
+  <html>
+    <head>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      <style type="text/css">
+        nav {
+          position: relative;
+          z-index: 1;
+        }
+        
+        .right {
+          display : flex;
+          -webkit-flex-flow : column nowrap;
+          justify-content : center;
+          align-content : center;
+          align-items : center;
+        }
+        .right div.promo {
+          order : 1;
+          -webkit-flex : 1 0 30%;
+          align-self : center;
+          min-height: auto;
+          min-width: auto;
+        }
+        .right div.keypad {
+          order : 2;
+          -webkit-flex : 1 0 auto;
+          align-self : center;
+          min-height: auto;
+          min-width: auto;
+        }
+        .left {
+          display: flex;
+          -webkit-flex-flow : column nowrap;
+          justify-content : center;
+          align-content: left;
+          align-items : center;
+        }
+        .left div.user {
+          order : 1;
+          -webkit-flex : 1 0 2%;
+          align-self : center;
+          min-height: auto;
+          min-width: auto;
+        }
+        .left div.cart {
+          order : 2;
+          -webkit-flex : 1 0 auto;
+          align-self : center;
+          min-height: auto;
+          min-width: auto;
+        }
+
+
+      </style>
+    </head>
+
+    <body>
+
+      <nav class="amber darken-4"><a href="draftone.html">DRAFT ONE</a></nav>
+
+      <div class="container-fluid">
+        <div class="row">
+
+
+          <div class="card large amber lighten-4 col l8 m8 s8 left">
+             <div class="card small red accent-3 col m12 user">
+             </div><!-- small card user -->
+             <div class="card small red accent-3 col m12 cart">
+             </div><!-- small card cart -->
+
+          </div><!-- card col 8 -->
+
+
+          <div class="card large amber lighten-4 col l4 m4 s4 right">
+            
+              
+              <div class="card small red accent-3 col m12 promo">
+              </div><!-- small card promo -->
+              <div class="card small red accent-3 col m12 keypad">
+              </div><!-- small card keypad -->
+
+            
+          </div><!-- card col 4 -->
+
+
+        </div><!-- row -->
+      </div><!-- container -->
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript">
+
+      $(document).ready(function() {
+        var windowHeight = $(window).height();
+        var navHeight = $('nav').height();
+        var appHeight = (windowHeight - navHeight) - 10;
+        $('container-fluid, .row, .row > div.large').css('height', appHeight);
+      })
+
+      </script>
+
+    </body>
+  </html>
